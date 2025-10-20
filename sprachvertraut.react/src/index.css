@@ -1,0 +1,153 @@
+/* Design Ideas
+ *  old paper: #f6eee3	(246,238,227), #eee7d7	(238,231,215), #e5decf	(229,222,207)
+ *  coffee:#724e2c	(114,78,44), #271300	(39,19,0), #9c6f44	(156,111,68), #563517	(86,53,23), #6f4827	(111,72,39)
+ *
+ *  clay: #FDCA9D (253,201, 155), #EC9163 (236,145, 99), #AD5924 (173,89, 36, #F7C292 (247,194,146)
+ *  clay2: #F1D099 (241,208, 153), #995D47 (153, 93, 71)
+ *
+ *  chocolate: #331712 (51, 23, 18), #4D2118 (77, 33, 24), #633027 (99, 48, 39)   
+ *  */
+/*  dcolor-light: #AAAB8;
+ *  dcolor-medium: #464866;
+ *  dcolor-dark: #25274D;
+ *  daccent-light: #2E9CCA;
+ *  daccent-dark: #29648A; 
+ *  */
+/* This is the MAIN banner component */
+/* banner left partial spans over two rows to set the Esh-Sign as drop cap */
+#banner {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  font-size: 6rem;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+  #banner {
+    font-size: 5rem;
+  }
+}
+#banner_left {
+  display: inline-block;
+  grid-row: 1/span 2;
+}
+
+#banner_right1 {
+  display: inline-block;
+  align-self: center;
+  font-size: 0.5em;
+}
+
+#banner_right2 {
+  display: inline-block;
+  align-self: end;
+  font-size: 0.5em;
+}
+
+/* This is the HIEROGLYPH banner component */
+/* It shows 6 aegyptian hieroglyphs in a grid */
+/* The first and last span two rows, the second to fifth are in a 2x2 grid */
+#hieroglyph {
+  display: grid;
+  justify-content: center;
+  grid-template-areas: "left top1 top2 right" "left bottom1 bottom2 right";
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  padding: 10px;
+  width: 100%;
+  font-family: "Noto Sans Egyptian Hieroglyphs", sans-serif;
+  height: 9rem;
+  width: 14rem;
+}
+#hieroglyph div {
+  margin-top: -2.5rem;
+}
+
+#hiero_top1 {
+  display: grid;
+  grid-area: top1;
+  font-size: 3rem;
+  align-self: end;
+  margin-bottom: 2.5rem;
+}
+
+#hiero_top2 {
+  display: grid;
+  grid-area: top2;
+  font-size: 4rem;
+  align-self: end;
+  margin-bottom: 2.5rem;
+}
+
+#hiero_bottom1 {
+  display: grid;
+  grid-area: bottom1;
+  font-size: 5rem;
+  line-height: 6rem;
+  align-self: start;
+  place-content: top;
+}
+
+#hiero_bottom2 {
+  display: grid;
+  grid-area: bottom2;
+  align-self: start;
+  place-items: start center;
+  line-height: 2rem;
+  font-size: 7rem;
+}
+
+#hiero_left {
+  display: grid;
+  grid-area: left;
+  font-size: 9rem;
+  line-height: 10.8rem;
+  padding-top: 1.2rem;
+  align-self: end;
+}
+
+#hiero_right {
+  display: grid;
+  grid-area: right;
+  font-size: 9rem;
+  height: 12rem;
+  align-self: end;
+  color: #005;
+}
+
+body {
+  margin: 0 auto;
+  color: #8E8D8A;
+  color: #271300;
+  background-color: #eee7d7;
+  border: solid 1px #331712;
+}
+body a {
+  color: #724e2c;
+}
+body a:hover {
+  color: hsl(29.1428571429, 44.3037974684%, 40.9803921569%);
+}
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  border-left-width: 5px;
+  border-right-width: 5px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  padding-top: 10%;
+  justify-content: center;
+}/*# sourceMappingURL=index.css.map */

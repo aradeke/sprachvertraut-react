@@ -1,0 +1,102 @@
+/* This is the MAIN banner component */
+/* banner left partial spans over two rows to set the Esh-Sign as drop cap */
+#banner
+    display: grid
+    justify-content: center
+    grid-template-columns: auto auto
+    grid-template-rows: 1fr 1fr
+    column-gap: 10px
+    font-size: 6rem
+    padding: 10px 0 
+    margin: 0 auto
+
+/* Mobile */
+@media (max-width: 450px) 
+    #banner
+        font-size: 5rem
+
+#banner_left
+    display: inline-block
+    grid-row: 1 / span 2
+    
+
+#banner_right1
+    display: inline-block
+    align-self: center
+    font-size: 0.5em
+    
+
+#banner_right2
+    display: inline-block
+    align-self: end
+    font-size: 0.5em
+    
+
+/* This is the HIEROGLYPH banner component */
+/* It shows 6 aegyptian hieroglyphs in a grid */
+/* The first and last span two rows, the second to fifth are in a 2x2 grid */
+#hieroglyph
+    display: grid
+    justify-content: center
+    grid-template-areas: "left top1 top2 right" "left bottom1 bottom2 right"
+    column-gap: 10px
+    padding: 10px
+    width: 100%
+    font-family: 'Noto Sans Egyptian Hieroglyphs', sans-serif
+    height: 9rem;
+    width: 14rem;   
+
+    div 
+        margin-top: -2.5rem;
+
+#hiero_top1
+    display: grid
+    grid-area: top1
+    font-size: 3rem
+    align-self: end
+    margin-bottom: 2.5rem
+    
+
+#hiero_top2
+    display: grid
+    grid-area: top2
+    font-size: 4rem
+    align-self: end
+    margin-bottom: 2.5rem
+    
+
+#hiero_bottom1
+    display: grid
+    grid-area: bottom1
+    font-size: 5rem
+    line-height: 6rem
+    align-self: start
+    place-content: top
+    
+
+#hiero_bottom2
+    display: grid
+    grid-area: bottom2
+    align-self: start
+    place-items: start center
+    line-height: 2rem
+    font-size: 7rem
+    
+
+#hiero_left
+    display: grid
+    grid-area: left
+    font-size: 9rem
+    line-height: 10.8rem
+    padding-top: 1.2rem
+    align-self: end
+
+
+#hiero_right
+    display: grid
+    grid-area: right
+    font-size: 9rem
+    height: 12rem
+    align-self: end
+    color: #005
+
