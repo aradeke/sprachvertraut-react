@@ -15,7 +15,7 @@
  *  */
 /* This is the MAIN banner component */
 /* banner left partial spans over two rows to set the Esh-Sign as drop cap */
-#banner {
+#main_banner {
   display: grid;
   justify-content: center;
   grid-template-columns: auto auto;
@@ -25,27 +25,21 @@
   font-size: 6rem;
   padding: 10px 0;
   margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Mobile */
-@media (max-width: 450px) {
-  #banner {
-    font-size: 5rem;
-  }
-}
-#banner_left {
-  display: inline-block;
+#main_banner_left {
   grid-row: 1/span 2;
 }
 
-#banner_right1 {
-  display: inline-block;
-  align-self: center;
+#main_banner_right1 {
   font-size: 0.5em;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-#banner_right2 {
-  display: inline-block;
+#main_banner_right2 {
   align-self: end;
   font-size: 0.5em;
 }
@@ -127,12 +121,21 @@ body {
   color: #271300;
   background-color: #eee7d7;
   border: solid 1px #331712;
+  width: max(450px, 80%);
+  font-size: 1.2rem;
+  border-width: 0px;
 }
 body a {
   color: #724e2c;
 }
 body a:hover {
   color: hsl(29.1428571429, 44.3037974684%, 40.9803921569%);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  text-align: left;
 }
 
 #wrapper {
@@ -148,6 +151,8 @@ body a:hover {
 header {
   position: sticky;
   top: 0;
-  padding-top: 10%;
   justify-content: center;
+  align-content: start;
+  max-height: 30%;
+  background-color: rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=index.css.map */

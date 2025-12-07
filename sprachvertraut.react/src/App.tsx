@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './layouts/Header'
-import Main from './layouts/Main'
-import Footer from './layouts/Footer'
+import Header from './components/layout/Header'
+import Main from './components/layout/Main'
+import Footer from './components/layout/Footer'
 
 export default function Body() {
   return (

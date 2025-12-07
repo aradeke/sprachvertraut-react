@@ -1,6 +1,6 @@
 /* This is the MAIN banner component */
 /* banner left partial spans over two rows to set the Esh-Sign as drop cap */
-#banner
+#main_banner
     display: grid
     justify-content: center
     grid-template-columns: auto auto
@@ -9,25 +9,28 @@
     font-size: 6rem
     padding: 10px 0 
     margin: 0 auto
+    background-color: rgba(0,0,0, 0.2)
+    
+    
+
 
 /* Mobile */
-@media (max-width: 450px) 
-    #banner
-        font-size: 5rem
+//@media (max-width: 450px) 
+//    #main_banner
+//        font-size: 5rem
 
-#banner_left
-    display: inline-block
+#main_banner_left
     grid-row: 1 / span 2
     
 
-#banner_right1
-    display: inline-block
-    align-self: center
+#main_banner_right1
     font-size: 0.5em
+    height: 100%
+    background-color: rgba(0,0,0, 0.2)
+
     
 
-#banner_right2
-    display: inline-block
+#main_banner_right2
     align-self: end
     font-size: 0.5em
     
