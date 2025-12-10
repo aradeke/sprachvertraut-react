@@ -1,14 +1,8 @@
 import React from 'react'
-import Header from './components/layout/Header'
-import Main from './components/layout/Main'
-import Footer from './components/layout/Footer'
+import { RouterProvider } from 'react-router-dom';
+import router from './router/router'
 
-export default function Body() {
-  return (
-    <body>
-      <Header />
-      <Main />
-      <Footer />
-    </body>
-  )
+
+export default function App() {
+  return <RouterProvider router={router} />
 }
