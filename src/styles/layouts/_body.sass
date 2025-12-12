@@ -1,8 +1,9 @@
-@use "../base/colors" as base
+@use "../themes/_global" as themes
 
 body
+    background: $bg-main
     margin: 0 auto
-    color: #8E8D8A
+    color: $txt-light
     @include base.color-scheme()
     width: max(450px, 80%)
     font-size: 1.2rem
@@ -15,10 +16,6 @@ main
     margin: 0 50px
     width: calc(100%-100px)
     
-    
-    
-
-
 #wrapper
     display: flex
     justify-content: center
