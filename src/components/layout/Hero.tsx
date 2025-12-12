@@ -4,9 +4,9 @@ import MainNav from './nav/MainNav'
 
 export default function Hero() {
     return (
-        <>
+        <section className="hero">
             <Avatar />
             <MainNav />
-        </>
+        </section>
     )
 }

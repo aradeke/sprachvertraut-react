@@ -1,18 +1,73 @@
-/* Design Ideas
- *  old paper: #f6eee3	(246,238,227), #eee7d7	(238,231,215), #e5decf	(229,222,207)
- *  coffee:#724e2c	(114,78,44), #271300	(39,19,0), #9c6f44	(156,111,68), #563517	(86,53,23), #6f4827	(111,72,39)
- *
- *  clay: #FDCA9D (253,201, 155), #EC9163 (236,145, 99), #AD5924 (173,89, 36, #F7C292 (247,194,146)
- *  clay2: #F1D099 (241,208, 153), #995D47 (153, 93, 71)
- *
- *  chocolate: #331712 (51, 23, 18), #4D2118 (77, 33, 24), #633027 (99, 48, 39)   
- *  */
-/*  dcolor-light: #AAAB8;
- *  dcolor-medium: #464866;
- *  dcolor-dark: #25274D;
- *  daccent-light: #2E9CCA;
- *  daccent-dark: #29648A; 
- *  */
+@charset "UTF-8";
+/* Global layouts: body, footer, header */
+.theme-bluelake_honey.light {
+  --primary-600: #D4A017;
+  --primary-400: #F6C453;
+  --primary-700: #8E6B1F;
+  --text-100: #0D1B2A;
+  --text-300: #154C73;
+  --text-500: #0057A6;
+  --text-700: #510201;
+  --bg-900: #FFFFFF;
+  --bg-800: #F6F6F6;
+  --bg-600: #E1EAF6;
+  --success: #2F8F5A;
+  --error: #C14F4A;
+}
+
+.theme-bluelake_honey.dark {
+  --primary-600: #D4A017;
+  --primary-400: #F6C453;
+  --primary-700: #8E6B1F;
+  --text-100: #FFFFFF;
+  --text-300: #C7D7E5;
+  --text-500: #5FA8D3;
+  --text-700: #0057A6;
+  --text-900: #510201;
+  --bg-900: #0D1B2A;
+  --bg-800: #0A2740;
+  --bg-600: #154C73;
+  --success: #5BBE72;
+  --error: #C14F4A;
+}
+
+body {
+  background-color: var(--bg-800);
+  margin: 0 auto;
+  color: var(--text-300);
+  width: max(450px, 80%);
+  font-size: 1.2rem;
+  border-width: 0px;
+}
+
+main {
+  display: block;
+  justify-content: center;
+  text-align: left;
+  padding: 0 50px;
+  width: calc(100% - 100px);
+}
+main section {
+  display: block;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  align-content: start;
+  max-height: 30%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  width: max 480px 80%;
+}
+
+/* Components: banners, hero*/
 /* This is the MAIN banner component */
 /* banner left partial spans over two rows to set the Esh-Sign as drop cap */
 #main_banner {
@@ -44,115 +99,49 @@
   font-size: 0.5em;
 }
 
-/* This is the HIEROGLYPH banner component */
-/* It shows 6 aegyptian hieroglyphs in a grid */
-/* The first and last span two rows, the second to fifth are in a 2x2 grid */
-#hieroglyph {
-  display: grid;
-  justify-content: center;
-  grid-template-areas: "left top1 top2 right" "left bottom1 bottom2 right";
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-  padding: 10px;
-  width: 100%;
-  font-family: "Noto Sans Egyptian Hieroglyphs", sans-serif;
-  height: 9rem;
-  width: 14rem;
+/* UI Elements: Light/Dark switch*/
+.switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
 }
-#hieroglyph div {
-  margin-top: -2.5rem;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
-
-#hiero_top1 {
-  display: grid;
-  grid-area: top1;
-  font-size: 3rem;
-  align-self: end;
-  margin-bottom: 2.5rem;
+.switch input:checked + .slider {
+  background-color: #2196f3;
 }
-
-#hiero_top2 {
-  display: grid;
-  grid-area: top2;
-  font-size: 4rem;
-  align-self: end;
-  margin-bottom: 2.5rem;
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
 }
-
-#hiero_bottom1 {
-  display: grid;
-  grid-area: bottom1;
-  font-size: 5rem;
-  line-height: 6rem;
-  align-self: start;
-  place-content: top;
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+  content: "🌞";
 }
-
-#hiero_bottom2 {
-  display: grid;
-  grid-area: bottom2;
-  align-self: start;
-  place-items: start center;
-  line-height: 2rem;
-  font-size: 7rem;
-}
-
-#hiero_left {
-  display: grid;
-  grid-area: left;
-  font-size: 9rem;
-  line-height: 10.8rem;
-  padding-top: 1.2rem;
-  align-self: end;
-}
-
-#hiero_right {
-  display: grid;
-  grid-area: right;
-  font-size: 9rem;
-  height: 12rem;
-  align-self: end;
-  color: #005;
-}
-
-body {
-  margin: 0 auto;
-  color: #8E8D8A;
-  color: #271300;
-  background-color: #eee7d7;
-  border: solid 1px #331712;
-  width: max(450px, 80%);
-  font-size: 1.2rem;
-  border-width: 0px;
-}
-body a {
-  color: #724e2c;
-}
-body a:hover {
-  color: hsl(29.1428571429, 44.3037974684%, 40.9803921569%);
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  text-align: left;
-}
-
-#wrapper {
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  border-left-width: 5px;
-  border-right-width: 5px;
-}
-
-header {
-  position: sticky;
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
   top: 0;
-  justify-content: center;
-  align-content: start;
-  max-height: 30%;
-  background-color: rgba(0, 0, 0, 0.2);
-}/*# sourceMappingURL=index.css.map */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7c7e7f;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.switch .slider:before {
+  position: absolute;
+  content: "🌒";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Themes imported by helper in styles/themes/_themes.sass *//*# sourceMappingURL=index.css.map */

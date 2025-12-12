@@ -4,16 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sprachvertraut.react</title>
+    
     <script>
+      const storedTheme = localStorage.getItem('theme');
+      const theme = storedTheme || 'theme-bluelake_honey';
+      document.documentElement.classList.add(theme)
+
       const storedMode = localStorage.getItem('mode');
       const mode = storedMode || (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light');
       document.documentElement.classList.add(mode);
 
-      const storedTheme = localStorage.getItem('theme');
-      const theme = storedTheme || 'bluelake_honey';
-      document.documentElement.classList.add(theme)
+
 
     </script>
+
+  
+
   </head>
   <body>
     <div id="root"></div>

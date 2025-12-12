@@ -1,0 +1,17 @@
+@use "./bluelake_honey" as bluelake_honey
+
+$themes: ( 
+    bluelake_honey: (
+        light: bluelake_honey.$bluelake_honey-light,
+        dark: bluelake_honey.$bluelake_honey-dark
+    )
+)
+
+@mixin theme-variables($map) 
+    @each $key, $value in $map
+        --#{$key}: #{$value}
+
+@each $themeName, $modes in $themes
+    @each $modeName, $tokenMap in $modes
+        .theme-#{$themeName}.#{$modeName}
+            @include theme-variables($tokenMap)

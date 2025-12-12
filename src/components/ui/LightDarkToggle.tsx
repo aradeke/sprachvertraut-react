@@ -15,10 +15,13 @@ export default function LightDarkToggle() {
     }
 
     return (
-        <label htmlFor="light-dark-toggle" className="switch">
-            { mode === 'dark' ? '🌒': '🌞' }
-            <input type="checkbox" onChange={toggleMode} className="light-dark-toggle" checked={mode === 'dark'}  />
-           
+        <label htmlFor="input-light-dark-toggle" className="switch">
+            { mode === 'dark' ? '🌒': ' ' }
+            <input type="checkbox" onChange={toggleMode} 
+                checked={mode === 'dark'} 
+                id="input-light-dark-toggle"/>
+            <span className="slider"></span> 
+            { mode === 'light' ? '🌞': '' }
         </label>
     )
 }

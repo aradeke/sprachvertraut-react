@@ -1,26 +1,13 @@
-// SASS-Structure
-//   /helper: variables, functions, mixins    
-//    /base: 
-//        > typography (todo)
-//        > colors
-//    /components: 
-//      > banners (base, hieroglyphic)
-//    /layouts: 
-//      > body
-//        > wrapper, main
-//        > header, 
-//        > navigation
-//        > footer
-//    /pages: page specific styles (check if needed in onepager project)
-//    /themes: theme specific styles*/
-
-    
-// TODO: Check what is needed and remove comments    
-//    @use "sass/abstracts/global" 
-
-@use "./styles/components/global" as components
+/* Global layouts: body, footer, header */
 @use "./styles/layouts/global" as layouts
+/* Components: banners, hero*/
+@use "./styles/components/global" as components
+/* UI Elements: Light/Dark switch*/
+@use "./styles/ui/global" as ui
+
+/* Themes imported by helper in styles/themes/_themes.sass */
 @use "./styles/themes/global" as themes
+
 
 
 
