@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 export default function LightDarkToggle() {
 
@@ -15,13 +17,18 @@ export default function LightDarkToggle() {
     }
 
     return (
-        <label htmlFor="input-light-dark-toggle" className="switch">
-            { mode === 'dark' ? '🌒': ' ' }
+        <label htmlFor="input-light-dark-toggle" className="switch" aria-label="Toggle dark/light mode">
+        
             <input type="checkbox" onChange={toggleMode} 
                 checked={mode === 'dark'} 
                 id="input-light-dark-toggle"/>
-            <span className="slider"></span> 
-            { mode === 'light' ? '🌞': '' }
+            <span className="slider">
+                <span className="slider-knob">
+                    <FontAwesomeIcon icon={mode==='dark' ? faMoon : faSun} />
+                </span>
+            </span> 
+
         </label>
+
     )
 }

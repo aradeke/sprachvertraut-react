@@ -8,6 +8,7 @@ import Main from './Main';
 export default function RootLayout() {
     return (
         <>
+            <div id="spacer" ></div>
             <Header/>
             <Hero/>
             <Main />

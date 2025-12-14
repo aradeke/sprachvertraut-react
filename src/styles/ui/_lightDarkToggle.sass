@@ -1,47 +1,51 @@
 .switch
+  position: relative
   display: inline-block
   width: 60px
   height: 34px
-  position: relative
-  
+  margin-top: 0px
+  padding-top: 0px
+  vertical-align: middle 
+  font-size: 0px
+  float: right
+
 
   input
     opacity: 0
     width: 0
     height: 0
-    
-    &:checked + .slider
-      background-color: #2196f3
-      
-
-      
-
-    &:focus + .slider
-      box-shadow: 0 0 1px #2196f3
-
-    &:checked + .slider:before
-      transform: translateX(26px)
-      content: "🌞"
 
   .slider
-    position: absolute
-    cursor: pointer
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background-color: #7c7e7f
-    
-    transition: 0.4s
+    display: block
+    position: relative
+    width: 100%
+    height: 100%
+    mind-width: 60px
+    min-height: 34px
+    background-color: var(--text-500)
     border-radius: 34px
+    transition: background-color 0.6s
 
-    &:before
-      position: absolute
-      content: "🌒"
-      height: 26px
-      width: 26px
-      left: 4px
-      bottom: 4px
-      background-color: white
-      transition: 0.4s
-      border-radius: 50%
+  .slider-knob
+    position: absolute
+    top: 4px
+    left: 4px
+    width: 26px
+    height: 26px
+    background-color: var(--bg-800)
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: transform 1
+
+  .slider-knob svg
+    color: var(--bg-200)
+    font-size: 14px
+    transition: transform 1
+
+  /* When checked, move the knob to the right */
+  input:checked + .slider .slider-knob
+    transform: translateX(26px)
+
+

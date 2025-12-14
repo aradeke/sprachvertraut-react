@@ -2,14 +2,54 @@
 /* banner left partial spans over two rows to set the Esh-Sign as drop cap */
 #main_banner
     display: grid
-    justify-content: center
-    grid-template-columns: auto auto
-    grid-template-rows: 1fr 1fr
-    column-gap: 10px
-    font-size: 6rem
+    grid-gap: 10px
     padding: 10px 0 
     margin: 0 auto
-    background-color: rgba(0,0,0, 0.2)
+    transition: transform 0.3s ease, font-size 0.3s ease
+    transform-origin: top left
+    
+
+    &.main_banner
+        justify-content: center
+        grid-template-columns: auto auto
+        grid-template-rows: 1fr 1fr
+        font-size: 6rem
+    
+        #main_banner_left
+            grid-row: 1 / span 2
+
+        #main_banner_right1
+            font-size: 0.5em
+            height: 100%
+
+        #main_banner_right2
+            align-self: end
+            font-size: 0.5em
+
+
+    &.main_banner--fixed
+        grid-template-columns: auto auto auto
+        grid-template-rows: 1fr
+        grid-gap: 0
+        font-size: 2rem
+        align-items: end
+        justify-content: start
+        transform: scale(1)
+        
+        
+        #main_banner_left 
+            font-size: 1.2em
+            justify-self: start
+            
+
+        #main_banner_right1, #main_banner_right2
+            font-size: 1em
+            justify-self: start
+            
+
+        #main_banner_right2
+            padding-left: 10px
+        
     
     
 
@@ -19,20 +59,7 @@
 //    #main_banner
 //        font-size: 5rem
 
-#main_banner_left
-    grid-row: 1 / span 2
-    
 
-#main_banner_right1
-    font-size: 0.5em
-    height: 100%
-    background-color: rgba(0,0,0, 0.2)
-
-    
-
-#main_banner_right2
-    align-self: end
-    font-size: 0.5em
     
 
 
