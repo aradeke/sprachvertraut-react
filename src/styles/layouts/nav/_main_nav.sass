@@ -1,0 +1,108 @@
+@use '../../settings/global' as settings
+@use '../../ui/global' as ui
+
+$li-size: calc(settings.$avatar-size / 3)
+$hex-outline-color: var(--text-500)
+$hex-outline-hover: var(--primary-600)
+
+
+.main_nav_base
+    a 
+        text-decoration: none
+        color: var(--text-500)
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-content: center
+     
+
+        &:hover, &:focus-visible
+            color: var(--primary-600)
+        
+            .hex polygon
+                stroke: var(--primary-600)
+
+    ul
+        list-style: none
+        
+        li
+            display: flex
+            text-align: center
+            justify-content: center
+            align-content: center
+            height: $li-size
+            width: $li-size            
+            
+            .hex
+                height: $li-size
+                width: $li-size
+                
+                polygon
+                    stroke: var(--text-500)
+                
+
+
+
+                &+svg  
+                    transform: translateY(calc($li-size * -0.65 ))
+
+
+            
+
+.main_nav
+    width: 100%
+    height: 100%
+    padding: 0
+    margin: 0 
+
+    ul
+        li
+            a 
+                display: flex
+                text-align: center
+                justify-content: center
+                align-content: center
+            
+        li:nth-child(2)
+            margin-left: 14em
+
+        li:nth-child(4)
+            margin-left: calc( ( $li-size / 4 ) * -1)
+            margin-top: 1em
+            display: inline-block
+        
+        li:nth-child(5)
+            margin-left: calc( $li-size / 2 )
+            margin-top: 1em
+            display: inline-block
+
+.main_nav--fixed
+    ul 
+        z-index: 101
+        display: flex
+        height: 10vh
+        width: auto
+        padding-left: 0
+        
+        li
+            display: flex
+            height: 6vh
+            a
+                display: flex
+                
+                aspect-ratio: 1/1
+                align-content: center
+                justify-content: center
+                margin: 0
+
+
+        &>li:nth-child(odd)
+            align-self: flex-end
+        
+        li:nth-child(even)
+            align-self: flex-start
+            
+            
+
+        
+

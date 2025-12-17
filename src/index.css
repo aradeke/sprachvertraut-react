@@ -1,4 +1,5 @@
 /* Global layouts: body, footer, header */
+/* additional layout components: hero, avatar, banners, nav */
 .theme-bluelake_honey.light {
   --primary-600: #D4A017;
   --primary-400: #F6C453;
@@ -50,9 +51,11 @@ header {
   align-content: center;
   padding: 2vh;
   background-color: rgba(0, 0, 0, 0.2);
+  height: 15vh;
 }
 header.fixed {
   z-index: 100;
+  height: 10vh;
 }
 
 footer {
@@ -77,57 +80,6 @@ main section {
   margin: 0 auto;
 }
 
-/* Components: banners, hero*/
-/* This is the MAIN banner component */
-/* banner left partial spans over two rows to set the Esh-Sign as drop cap */
-#main_banner {
-  display: grid;
-  grid-gap: 10px;
-  padding: 10px 0;
-  margin: 0 auto;
-  transition: transform 0.3s ease, font-size 0.3s ease;
-  transform-origin: top left;
-}
-#main_banner.main_banner {
-  justify-content: center;
-  grid-template-columns: auto auto;
-  grid-template-rows: 1fr 1fr;
-  font-size: 6rem;
-}
-#main_banner.main_banner #main_banner_left {
-  grid-row: 1/span 2;
-}
-#main_banner.main_banner #main_banner_right1 {
-  font-size: 0.5em;
-  height: 100%;
-}
-#main_banner.main_banner #main_banner_right2 {
-  align-self: end;
-  font-size: 0.5em;
-}
-#main_banner.main_banner--fixed {
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 1fr;
-  grid-gap: 0;
-  font-size: 2rem;
-  align-items: end;
-  justify-content: start;
-  transform: scale(1);
-}
-#main_banner.main_banner--fixed #main_banner_left {
-  font-size: 1.2em;
-  justify-self: start;
-}
-#main_banner.main_banner--fixed #main_banner_right1, #main_banner.main_banner--fixed #main_banner_right2 {
-  font-size: 1em;
-  justify-self: start;
-}
-#main_banner.main_banner--fixed #main_banner_right2 {
-  padding-left: 10px;
-}
-
-/* Mobile */
-/* UI Elements: Light/Dark switch*/
 .switch {
   position: relative;
   display: inline-block;
@@ -178,4 +130,175 @@ main section {
   transform: translateX(26px);
 }
 
-/* Themes imported by helper in styles/themes/_themes.sass *//*# sourceMappingURL=index.css.map */
+#avatar {
+  position: relative;
+  display: inline-block;
+  float: left;
+  background: white;
+  clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
+  margin-top: 1em;
+}
+
+.hero {
+  height: 30vh;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10vh 20vw;
+}
+.hero .avatar {
+  width: 12em;
+  height: 12em;
+}
+
+.hero--fixed {
+  height: 10vh;
+  position: fixed;
+  top: 10vh;
+  width: max(450px, 80%);
+  margin-top: 1.1em;
+}
+.hero--fixed .avatar--fixed {
+  position: relative;
+  aspect-ratio: 1/1;
+  height: 9vh;
+}
+
+/* This is the MAIN banner component */
+/* banner left partial spans over two rows to set the Esh-Sign as drop cap */
+#main_banner {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px 0;
+  margin: 0 auto;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  transform-origin: top left;
+}
+#main_banner.main_banner {
+  justify-content: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+  font-size: 6rem;
+}
+#main_banner.main_banner #main_banner_left {
+  grid-row: 1/span 2;
+}
+#main_banner.main_banner #main_banner_right1 {
+  font-size: 0.5em;
+  height: 100%;
+}
+#main_banner.main_banner #main_banner_right2 {
+  align-self: end;
+  font-size: 0.5em;
+}
+#main_banner.main_banner--fixed {
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 1fr;
+  grid-gap: 0;
+  font-size: 2rem;
+  align-items: end;
+  justify-content: start;
+  transform: scale(1);
+}
+#main_banner.main_banner--fixed #main_banner_left {
+  font-size: 1.2em;
+  justify-self: start;
+}
+#main_banner.main_banner--fixed #main_banner_right1, #main_banner.main_banner--fixed #main_banner_right2 {
+  font-size: 1em;
+  justify-self: start;
+}
+#main_banner.main_banner--fixed #main_banner_right2 {
+  padding-left: 10px;
+}
+
+/* Mobile */
+.main_nav_base a {
+  text-decoration: none;
+  color: var(--text-500);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.main_nav_base a:hover, .main_nav_base a:focus-visible {
+  color: var(--primary-600);
+}
+.main_nav_base a:hover .hex polygon, .main_nav_base a:focus-visible .hex polygon {
+  stroke: var(--primary-600);
+}
+.main_nav_base ul {
+  list-style: none;
+}
+.main_nav_base ul li {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  height: 4em;
+  width: 4em;
+}
+.main_nav_base ul li .hex {
+  height: 4em;
+  width: 4em;
+}
+.main_nav_base ul li .hex polygon {
+  stroke: var(--text-500);
+}
+.main_nav_base ul li .hex + svg {
+  transform: translateY(-2.6em);
+}
+
+.main_nav {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.main_nav ul li a {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+.main_nav ul li:nth-child(2) {
+  margin-left: 14em;
+}
+.main_nav ul li:nth-child(4) {
+  margin-left: -1em;
+  margin-top: 1em;
+  display: inline-block;
+}
+.main_nav ul li:nth-child(5) {
+  margin-left: 2em;
+  margin-top: 1em;
+  display: inline-block;
+}
+
+.main_nav--fixed ul {
+  z-index: 101;
+  display: flex;
+  height: 10vh;
+  width: auto;
+  padding-left: 0;
+}
+.main_nav--fixed ul li {
+  display: flex;
+  height: 6vh;
+}
+.main_nav--fixed ul li a {
+  display: flex;
+  aspect-ratio: 1/1;
+  align-content: center;
+  justify-content: center;
+  margin: 0;
+}
+.main_nav--fixed ul > li:nth-child(odd) {
+  align-self: flex-end;
+}
+.main_nav--fixed ul li:nth-child(even) {
+  align-self: flex-start;
+}
+
+/* UI Elements: Light/Dark switch, hex styling*/
+/* Themes imported by helper in styles/themes/_themes.sass */
+/* Settings like size variables, todo breakpoints, maybe spacing *//*# sourceMappingURL=index.css.map */

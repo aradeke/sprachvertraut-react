@@ -1,0 +1,46 @@
+@use '../ui/global' as ui
+@use '../settings/global' as settings
+
+#avatar
+    position: relative
+    display: inline-block
+    float: left
+    background: white
+    @include ui.hex-clip
+    margin-top: 1em
+
+
+
+
+.hero
+    
+    height: 30vh
+    margin: 0 auto
+    background: rgba(0,0,0,0.4)
+    padding: 10vh 20vw
+
+    .avatar
+        width: settings.$avatar-size
+        height: settings.$avatar-size
+        
+  
+
+
+.hero--fixed
+    
+    height: 10vh
+    position: fixed
+    top: settings.$header-height-fixed
+    width: max(450px, 80%)
+    margin-top: 1.1em
+
+    .avatar--fixed
+        
+        aspect-ratio: 1/1
+        height: 9vh
+        
+        
+    
+   
+
+

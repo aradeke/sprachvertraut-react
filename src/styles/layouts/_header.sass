@@ -1,3 +1,5 @@
+@use '../settings/_global' as settings
+
 header 
     position: sticky
     top: 0
@@ -5,8 +7,10 @@ header
     align-content: center
     padding: 2vh
     background-color: rgba(0,0,0, 0.2)
+    height: settings.$header-height-float
 
     &.fixed
         z-index: 100
+        height: settings.$header-height-fixed
         
     
