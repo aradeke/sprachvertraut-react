@@ -2,6 +2,8 @@
 @use '../../ui/global' as ui
 
 $li-size: calc(settings.$avatar-size / 3)
+$li-size--fixed: 5.9vh
+$hex-ratio: 1.1547005
 $hex-outline-color: var(--text-500)
 $hex-outline-hover: var(--primary-600)
 
@@ -26,23 +28,21 @@ $hex-outline-hover: var(--primary-600)
         list-style: none
         
         li
-            display: flex
             text-align: center
             justify-content: center
             align-content: center
             height: $li-size
-            width: $li-size            
+            aspect-ratio: $hex-ratio
+                   
             
             .hex
                 height: $li-size
-                width: $li-size
+                width: calc($li-size*$hex-ratio)
+                aspect-ratio: $hex-ratio
                 
                 polygon
                     stroke: var(--text-500)
                 
-
-
-
                 &+svg  
                     transform: translateY(calc($li-size * -0.65 ))
 
@@ -54,7 +54,6 @@ $hex-outline-hover: var(--primary-600)
     height: 100%
     padding: 0
     margin: 0 
-
     ul
         li
             a 
@@ -62,46 +61,92 @@ $hex-outline-hover: var(--primary-600)
                 text-align: center
                 justify-content: center
                 align-content: center
+                aspect-ratio: $hex-ratio
+                margin: 0 auto
             
         li:nth-child(2)
-            margin-left: 14em
+            margin-left: 16em
+            //display: inline-block
+        
+        li:nth-child(3)
+            display: inline-block
+            
 
         li:nth-child(4)
-            margin-left: calc( ( $li-size / 4 ) * -1)
-            margin-top: 1em
+            margin-left: calc( ( $li-size * $hex-ratio ) )
+            
             display: inline-block
         
         li:nth-child(5)
             margin-left: calc( $li-size / 2 )
-            margin-top: 1em
+            
             display: inline-block
 
 .main_nav--fixed
+    transition: transform 0.6s ease
+    transform: scale(1)
+    ul li, ul li a, ul li a .hex
+        transition: height 0.6s ease, width 0.6s ease, transform 0.6s ease, top 0.6s ease
+        
+
     ul 
         z-index: 101
         display: flex
-        height: 10vh
-        width: auto
+        height: calc($li-size--fixed*3/2)
         padding-left: 0
+        margin: 1em 0 0 0.5em
+        align-items: flex-start
+        transform: scale(1)
+        
         
         li
-            display: flex
-            height: 6vh
-            a
-                display: flex
-                
-                aspect-ratio: 1/1
-                align-content: center
-                justify-content: center
-                margin: 0
-
-
-        &>li:nth-child(odd)
-            align-self: flex-end
-        
-        li:nth-child(even)
-            align-self: flex-start
             
+            align-content: flex-start
+            height: $li-size--fixed
+            width: calc($li-size--fixed*$hex-ratio)
+            transform: scale(1)
+            padding-top: $li-size--fixed
+                
+            a
+                
+                height: $li-size--fixed
+                width: calc($li-size--fixed*$hex-ratio)
+                align-content: start
+                justify-content: center
+                              
+                .hex
+                    height: $li-size--fixed
+                    width: calc($li-size--fixed*$hex-ratio)
+
+
+                .svg-inline--fa
+                    transform: translateY(calc($li-size--fixed * -0.65 ))
+            &:nth-child(1)
+                transition: transform 0.6s ease
+                transform: translateY(calc($li-size--fixed * -1))
+            &:nth-child(2)
+                transition: transform 0.6s ease
+                transform: translateY(calc($li-size--fixed * -0.5))
+            &:nth-child(3)
+                margin-left: calc($li-size--fixed * $hex-ratio * -1)
+                transition: transform 0.6s ease
+                transform: translate(calc($li-size--fixed * $hex-ratio), calc($li-size--fixed * -1) )
+            &:nth-child(4)
+                transition: transform 0.6s ease
+                transform: translate(calc($li-size--fixed * $hex-ratio), calc($li-size--fixed * -0.5))
+           
+
+
+            
+            //&:nth-child(even)
+            //    align-self: flex-end
+            //
+            //&:nth-child(odd)
+            //    align-self: flex-start
+            
+
+
+      
             
 
         

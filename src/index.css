@@ -136,30 +136,38 @@ main section {
   float: left;
   background: white;
   clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
+  aspect-ratio: 1.1547005/1;
   margin-top: 1em;
 }
 
 .hero {
   height: 30vh;
+  width: auto;
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.4);
   padding: 10vh 20vw;
 }
 .hero .avatar {
-  width: 12em;
   height: 12em;
+  width: auto;
+  aspect-ratio: 1.1547005/1;
 }
 
 .hero--fixed {
+  z-index: 102;
+  transition: transform 0.6s ease, height 0.6s ease, width 0.6s ease;
   height: 10vh;
   position: fixed;
   top: 10vh;
   width: max(450px, 80%);
   margin-top: 1.1em;
+  display: flex;
+  justify-content: center;
 }
 .hero--fixed .avatar--fixed {
-  aspect-ratio: 1/1;
+  transition: height 0.6s ease, width 0.6s ease;
   height: 9vh;
+  width: auto;
 }
 
 /* This is the MAIN banner component */
@@ -169,8 +177,7 @@ main section {
   grid-gap: 10px;
   padding: 10px 0;
   margin: 0 auto;
-  transition: transform 0.3s ease, font-size 0.3s ease;
-  transform-origin: top left;
+  transition: transform 0.6s ease, font-size 0.6s ease;
 }
 #main_banner.main_banner {
   justify-content: center;
@@ -195,7 +202,7 @@ main section {
   grid-gap: 0;
   font-size: 2rem;
   align-items: end;
-  justify-content: start;
+  justify-content: center;
   transform: scale(1);
 }
 #main_banner.main_banner--fixed #main_banner_left {
@@ -229,16 +236,16 @@ main section {
   list-style: none;
 }
 .main_nav_base ul li {
-  display: flex;
   text-align: center;
   justify-content: center;
   align-content: center;
   height: 4em;
-  width: 4em;
+  aspect-ratio: 1.1547005;
 }
 .main_nav_base ul li .hex {
   height: 4em;
-  width: 4em;
+  width: 4.618802em;
+  aspect-ratio: 1.1547005;
 }
 .main_nav_base ul li .hex polygon {
   stroke: var(--text-500);
@@ -258,44 +265,76 @@ main section {
   text-align: center;
   justify-content: center;
   align-content: center;
+  aspect-ratio: 1.1547005;
+  margin: 0 auto;
 }
 .main_nav ul li:nth-child(2) {
-  margin-left: 14em;
+  margin-left: 16em;
+}
+.main_nav ul li:nth-child(3) {
+  display: inline-block;
 }
 .main_nav ul li:nth-child(4) {
-  margin-left: -1em;
-  margin-top: 1em;
+  margin-left: 4.618802em;
   display: inline-block;
 }
 .main_nav ul li:nth-child(5) {
   margin-left: 2em;
-  margin-top: 1em;
   display: inline-block;
 }
 
+.main_nav--fixed {
+  transition: transform 0.6s ease;
+  transform: scale(1);
+}
+.main_nav--fixed ul li, .main_nav--fixed ul li a, .main_nav--fixed ul li a .hex {
+  transition: height 0.6s ease, width 0.6s ease, transform 0.6s ease, top 0.6s ease;
+}
 .main_nav--fixed ul {
   z-index: 101;
   display: flex;
-  height: 10vh;
-  width: auto;
+  height: 8.85vh;
   padding-left: 0;
+  margin: 1em 0 0 0.5em;
+  align-items: flex-start;
+  transform: scale(1);
 }
 .main_nav--fixed ul li {
-  display: flex;
-  height: 6vh;
+  align-content: flex-start;
+  height: 5.9vh;
+  width: 6.81273295vh;
+  transform: scale(1);
+  padding-top: 5.9vh;
 }
 .main_nav--fixed ul li a {
-  display: flex;
-  aspect-ratio: 1/1;
-  align-content: center;
+  height: 5.9vh;
+  width: 6.81273295vh;
+  align-content: start;
   justify-content: center;
-  margin: 0;
 }
-.main_nav--fixed ul > li:nth-child(odd) {
-  align-self: flex-end;
+.main_nav--fixed ul li a .hex {
+  height: 5.9vh;
+  width: 6.81273295vh;
 }
-.main_nav--fixed ul li:nth-child(even) {
-  align-self: flex-start;
+.main_nav--fixed ul li a .svg-inline--fa {
+  transform: translateY(-3.835vh);
+}
+.main_nav--fixed ul li:nth-child(1) {
+  transition: transform 0.6s ease;
+  transform: translateY(-5.9vh);
+}
+.main_nav--fixed ul li:nth-child(2) {
+  transition: transform 0.6s ease;
+  transform: translateY(-2.95vh);
+}
+.main_nav--fixed ul li:nth-child(3) {
+  margin-left: -6.81273295vh;
+  transition: transform 0.6s ease;
+  transform: translate(6.81273295vh, -5.9vh);
+}
+.main_nav--fixed ul li:nth-child(4) {
+  transition: transform 0.6s ease;
+  transform: translate(6.81273295vh, -2.95vh);
 }
 
 /* UI Elements: Light/Dark switch, hex styling*/
