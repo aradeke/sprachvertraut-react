@@ -158,7 +158,6 @@ main section {
   margin-top: 1.1em;
 }
 .hero--fixed .avatar--fixed {
-  position: relative;
   aspect-ratio: 1/1;
   height: 9vh;
 }
