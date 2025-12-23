@@ -1,11 +1,12 @@
 @use '../../settings/global' as settings
 @use '../../ui/global' as ui
 
-$li-size: calc(settings.$avatar-size / 3)
-$li-size--fixed: 5.9vh
 $hex-ratio: 1.1547005
 $hex-outline-color: var(--text-500)
 $hex-outline-hover: var(--primary-600)
+$li-size: calc(settings.$avatar-size / 3)
+$li-width: calc($li-size * $hex-ratio)
+$li-size--fixed: 5.9vh
 
 
 .main_nav_base
@@ -37,7 +38,7 @@ $hex-outline-hover: var(--primary-600)
             
             .hex
                 height: $li-size
-                width: calc($li-size*$hex-ratio)
+                width: $li-width
                 aspect-ratio: $hex-ratio
                 
                 polygon
@@ -50,7 +51,7 @@ $hex-outline-hover: var(--primary-600)
             
 
 .main_nav
-    width: 100%
+    //width: 100%
     height: 100%
     padding: 0
     margin: 0 
@@ -61,11 +62,15 @@ $hex-outline-hover: var(--primary-600)
                 text-align: center
                 justify-content: center
                 align-content: center
-                aspect-ratio: $hex-ratio
+                height: $li-size
+                width: $li-width
                 margin: 0 auto
+
+        &:nth-child(1)
+            margin-left: -2em
             
         li:nth-child(2)
-            margin-left: 16em
+            margin-left: $li-width
             //display: inline-block
         
         li:nth-child(3)
@@ -73,7 +78,7 @@ $hex-outline-hover: var(--primary-600)
             
 
         li:nth-child(4)
-            margin-left: calc( ( $li-size * $hex-ratio ) )
+            margin-left: $li-width
             
             display: inline-block
         
@@ -121,6 +126,8 @@ $hex-outline-hover: var(--primary-600)
 
                 .svg-inline--fa
                     transform: translateY(calc($li-size--fixed * -0.65 ))
+
+
             &:nth-child(1)
                 transition: transform 0.6s ease
                 transform: translateY(calc($li-size--fixed * -1))
