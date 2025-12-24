@@ -1,12 +1,24 @@
 @use "../themes/_global" as themes
 
+ 
 body
-    background-color: var(--bg-800)
+    background-color: var(--bg-900)
     margin: 0 auto
     color: var(--text-300)
     width: max(450px, 80%)
     font-size: 1.2rem
     border-width: 0px
+
+
+#hex-canvas 
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: 1
+    pointer-events: none
+
 
 #spacer
     height: 20vh

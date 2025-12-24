@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faIdBadge, faBriefcase, faUserGear, faAt } from '@fortawesome/free-solid-svg-icons';
-import Hex from '../../ui/Hex'
+import Hex from '../../../assets/svg/Hex'
 
 
 

@@ -9,8 +9,8 @@
   --text-500: #0057A6;
   --text-700: #510201;
   --bg-900: #FFFFFF;
-  --bg-800: #F6F6F6;
-  --bg-600: #E1EAF6;
+  --bg-800: #f9eed8;
+  --bg-600: #DAC271;
   --success: #2F8F5A;
   --error: #C14F4A;
 }
@@ -32,12 +32,22 @@
 }
 
 body {
-  background-color: var(--bg-800);
+  background-color: var(--bg-900);
   margin: 0 auto;
   color: var(--text-300);
   width: max(450px, 80%);
   font-size: 1.2rem;
   border-width: 0px;
+}
+
+#hex-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
 }
 
 #spacer {
@@ -50,7 +60,7 @@ header {
   justify-content: center;
   align-content: center;
   padding: 2vh;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-600);
   height: 15vh;
 }
 header.fixed {
@@ -134,7 +144,7 @@ main section {
   position: relative;
   display: inline-block;
   float: left;
-  background: white;
+  background-color: var(--primary-600);
   clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
   aspect-ratio: 1.1547005/1;
   margin-top: 1em;
@@ -144,10 +154,11 @@ main section {
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 30vh;
-  width: auto;
+  height: 33vh;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.4);
+  margin-bottom: 33vh;
+  width: auto;
+  background-color: var(--bg-800);
 }
 .hero .avatar {
   height: 12em;
